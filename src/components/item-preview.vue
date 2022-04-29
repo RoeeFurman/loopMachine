@@ -29,8 +29,8 @@ export default {
   },
   components: {},
   computed: {
-    currentTimeTrack() {
-      return this.sound.currentTime;
+    cursorProgress() {
+      return this.$store.getters.cursorProgress;
     },
     muteMode() {
       return this.item.isMuted;
@@ -79,7 +79,7 @@ export default {
     onCursorMovedTo: {
       handler() {
         this.sound.currentTime = this.onCursorMovedTo;
-        this.sound.play();
+        if (this.isPlaying) this.sound.play();
       },
       immediate: true,
     },

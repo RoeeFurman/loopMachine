@@ -4,6 +4,14 @@
     height: 100%;
     width: 100%;
 
+    @media (max-width: 1000px) {
+        height: 22px;
+        grid-column: 1;
+        grid-row: 3;
+        width: 90%;
+        margin: auto;
+    }
+
     display: grid;
     grid-template-rows: repeat(9, 40px);
     grid-template-columns: 100%;
@@ -12,6 +20,10 @@
         background-color: $mainGray;
         height: 25px;
         border-radius: 5px;
+
+        @media (max-width: 1000px) {
+            background-color: lighten($mainBlack, 20);
+        }
 
         .timeline {
             -webkit-appearance: none;
@@ -44,6 +56,11 @@
                 &::before {
                     content: "Read this -";
                 }
+
+                @media (max-width: 1000px) {
+                    height: 47px;
+                }
+
             }
 
 

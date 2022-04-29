@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     onChangeCursor() {
-      console.log(this.currTime);
       this.$store.commit({ type: "onCursorMove", currTime: this.currTime });
     },
   },

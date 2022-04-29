@@ -21,7 +21,14 @@ export default {
     isLooping() {
       return this.$store.getters.isLooping;
     },
+
     displayPlayStop() {
+      if (
+        this.$store.getters.cursorProgress === this.$store.getters.soundDuration
+      ) {
+        this.stopAll();
+        return "fa-solid fa-play";
+      }
       return this.isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
     },
   },

@@ -9,4 +9,10 @@
     margin: auto;
     box-shadow: 0px 0px 30px 1px #000000;
 
+    @media (max-width: 1000px) {
+        grid-column: 1;
+        grid-row: 5;
+        padding: 2px 10px;
+        font-size: 24px;
+    }
 }

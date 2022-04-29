@@ -1,15 +1,16 @@
 <template>
-  {{ cursorProgress }}
   <div class="cursor-container">
-    <input
-      class="timeline"
-      type="range"
-      @input="onChangeCursor"
-      v-model="currTime"
-      min="0"
-      :max="soundDuration"
-      step="any"
-    />
+    <div class="cursor-input">
+      <input
+        class="timeline"
+        type="range"
+        @input="onChangeCursor"
+        v-model="currTime"
+        min="0"
+        :max="soundDuration"
+        step="any"
+      />
+    </div>
   </div>
 </template>
 <script>

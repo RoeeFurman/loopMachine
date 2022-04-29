@@ -1,0 +1,14 @@
+.sound-timeline {
+    grid-column: 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+
+    .layer {
+        width: 100%;
+        height: 40px;
+        opacity: .2;
+        border: 1px solid $main-background;
+        border-radius: 8px;
+    }
+}

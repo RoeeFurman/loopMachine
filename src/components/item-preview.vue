@@ -8,9 +8,6 @@
         </button>
       </div>
     </li>
-    <article v-if="openPreviewMode">
-      <h3>{{ item.fileURL }}</h3>
-    </article>
   </section>
 </template>
 

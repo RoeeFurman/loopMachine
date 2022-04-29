@@ -17,6 +17,7 @@ export default {
   props: {
     item: Object,
   },
+  emits: ["muteChannel"],
   data() {
     return {
       openPreviewMode: false,
@@ -108,7 +109,7 @@ export default {
     },
   },
   unmounted() {
-    this.sound.clearEventListener("timeupdate", this.updateProgress);
+    this.sound.removeEventListener("timeupdate", this.updateProgress);
   },
 };
 </script>

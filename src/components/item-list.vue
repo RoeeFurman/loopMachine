@@ -9,7 +9,7 @@
     />
   </ul>
   <ul class="sound-timeline">
-    <sound-timeline v-for="item in items" :item="item" :key="item._id" />
+    <sound-timeline v-for="item in items" :item="item" :key="item.name" />
   </ul>
 </template>
 
@@ -23,6 +23,7 @@ export default {
       type: Array,
       required: true,
     },
+    emits: ["muteChannel"],
   },
   components: {
     itemPreview,

@@ -60,7 +60,6 @@ export default {
             state.filterBy = filterBy;
         },
         onCursorMove(state, { currTime }) {
-            console.log(currTime)
             state.cursorMovedTo = currTime
         },
         setProgress(state, { progress }) {
@@ -77,18 +76,7 @@ export default {
         toggleLoop({ commit, state }) {
             commit({ type: 'setIsLooping' })
         },
-        // async muteChannel(context, { id }) {
-        //     const currChannel = await itemService.muteChannel(id)
-        //     context.dispatch('loadItems')
-        // },
-        // async loadItems({ commit, state }) {
-        //     try {
-        //         const items = await itemService.query(state.filterBy)
-        //         commit({ type: 'setItems', items })
-        //     } catch (err) {
-        //         console.log('loadItems err', err);
-        //     }
-        // },
+
         muteChannel(context, { id }) {
             const currChannel = itemService.muteChannel(id)
             context.dispatch('loadItems')

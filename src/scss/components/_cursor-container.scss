@@ -40,7 +40,12 @@
                 background: #ffffff;
                 cursor: pointer;
                 margin-top: -20px;
+
+                &::before {
+                    content: "Read this -";
+                }
             }
+
 
             &:focus::-webkit-slider-runnable-track {
                 background: $mainBlue;

@@ -17,55 +17,67 @@ const items = [
         "name": "All Track",
         "fileURL": "ALL_TRACK.mp3",
         "isMuted": false,
-        "color": '#ff77a0',
+        "color": '#763045',
     },
     {
         "_id": utilService.makeId(5),
         "name": "B Voc",
         "fileURL": "B_VOC.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#994961',
     },
     {
         "_id": utilService.makeId(5),
         "name": "Drums",
         "fileURL": "DRUMS.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#b85673',
     },
     {
         "_id": utilService.makeId(5),
         "name": "Tambourine shake",
         "fileURL": "_tambourine_shake_higher.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#dd6f90',
     },
     {
         "_id": utilService.makeId(5),
         "name": "HE HE VOC",
         "fileURL": "HE_HE_VOC.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#f9a661',
     },
     {
         "_id": utilService.makeId(5),
         "name": "HIGH_VOC",
         "fileURL": "HIGH_VOC.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#fd9843',
+
     },
     {
         "_id": utilService.makeId(5),
         "name": "JIBRISH",
         "fileURL": "JIBRISH.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#e58635',
+
     },
     {
         "_id": utilService.makeId(5),
         "name": "LEAD_1",
         "fileURL": "LEAD_1.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#d57c31',
+
     },
     {
         "_id": utilService.makeId(5),
         "name": "UUHO_VOC",
         "fileURL": "UUHO_VOC.mp3",
-        "isMuted": false
+        "isMuted": false,
+        "color": '#c5712a',
+
     },
 
 ];

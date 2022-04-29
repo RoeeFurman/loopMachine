@@ -4,10 +4,12 @@
 
     .sound-layer {
         display: flex;
+        border-radius: 6px;
         justify-content: space-between;
         align-items: center;
-
+        border-bottom: 1px solid $mainGray;
         padding: 10px 20px;
-        border-bottom: 1px solid darken($mainPink, 60%);
+        height: 40px;
+        width: 260px;
     }
 }

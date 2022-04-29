@@ -2,7 +2,11 @@
   <section class="item-preview">
     <li class="sound-layer" :style="{ 'background-color': item.color }">
       <label @click="openPreviewLine"> {{ item.name }}</label>
-      <button @click="muteChannel(item._id)">{{ displayMuteBtn }}</button>
+      <div class="mute-btn">
+        <button @click="muteChannel(item._id)">
+          <i :class="displayMuteBtn"></i>
+        </button>
+      </div>
     </li>
     <article v-if="openPreviewMode">
       <h3>{{ item.fileURL }}</h3>
@@ -29,7 +33,9 @@ export default {
       return this.item.isMuted;
     },
     displayMuteBtn() {
-      return this.item.isMuted ? "unMute" : "Mute";
+      return this.item.isMuted
+        ? "fa-solid fa-volume-xmark"
+        : "fa-solid fa-volume-high";
     },
     isPlaying() {
       return this.$store.getters.isPlaying;

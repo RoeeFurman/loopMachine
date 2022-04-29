@@ -2,7 +2,7 @@
   background-color: $main-background;
   display: grid;
   grid-template-columns: $gtc;
-  // grid-template-rows: 50px 60px 1fr;
+  grid-template-rows: 60px 1fr 60px 1fr;
   min-height: 88.8vh;
   gap: 15px;
   text-align: center;

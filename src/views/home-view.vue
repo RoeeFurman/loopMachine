@@ -2,17 +2,20 @@
   <section class="item-app">
     <item-list v-if="items" :items="items" @muteChannel="muteChannel" />
     <actions />
+    <cursorContainer />
   </section>
 </template>
 
 <script>
 import itemList from "../components/item-list.vue";
 import actions from "../components/actions.vue";
+import cursorContainer from "../components/cursor-container.vue";
 export default {
   name: "home",
   components: {
     itemList,
     actions,
+    cursorContainer,
   },
   computed: {
     items() {

@@ -1,8 +1,10 @@
 <template>
   <div class="actions">
-    <button @click="playAll">{{ displayPlayStop }}</button>
-    <button @click="stopAll">STOP</button>
-    <button @click="loopAll">LOOP</button>
+    <button @click="playAll"><i :class="displayPlayStop"></i></button>
+    <button @click="stopAll"><i class="fa-solid fa-stop"></i></button>
+    <button @click="loopAll" :class="{ repeat: isLooping }">
+      <i class="fa-solid fa-repeat"></i>
+    </button>
   </div>
 </template>
 
@@ -16,8 +18,11 @@ export default {
     isStopped() {
       return this.$store.getters.isStopped;
     },
+    isLooping() {
+      return this.$store.getters.isLooping;
+    },
     displayPlayStop() {
-      return this.isPlaying ? "PAUSE" : "PLAY";
+      return this.isPlaying ? "fa-solid fa-pause" : "fa-solid fa-play";
     },
   },
   methods: {
@@ -32,11 +37,11 @@ export default {
       });
     },
     stopAll() {
-      // if (this.isPlaying) {
-      //   this.$store.dispatch({
-      //     type: "togglePlaying",
-      //   });
-      // }
+      if (this.isPlaying) {
+        this.$store.dispatch({
+          type: "togglePlaying",
+        });
+      }
       this.$store.dispatch({
         type: "stopPlaying",
       });

@@ -1,0 +1,13 @@
+.cursor-container {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: $mainBlack;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: repeat(9, 40px);
+    grid-template-columns: 100%;
+    border: 1px solid $mainGray;
+}

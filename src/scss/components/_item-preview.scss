@@ -1,0 +1,13 @@
+.item-preview {
+    height: 40px;
+    align-items: center;
+
+    .sound-layer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 10px 20px;
+        border-bottom: 1px solid darken($mainPink, 60%);
+    }
+}

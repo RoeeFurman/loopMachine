@@ -1,0 +1,25 @@
+.home {
+  text-align: center;
+
+  .start-btn {
+    // width: 200px;
+    // margin: auto;
+    // background-color: lighten($mainBlack, 70);
+    // padding: 10px;
+    // border-radius: 30px;
+    // margin-bottom: 30px;
+    // transition: transform 0.8s, background-color 0.7s;
+
+    &:hover {
+      background-color: lighten($mainBlack, 80);
+      transform: scale(1.2);
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+    }
+  }
+
+}

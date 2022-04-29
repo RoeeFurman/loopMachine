@@ -1,0 +1,72 @@
+.main-header {
+  background-color: $mainBlack;
+  color: darken($mainBlue, 10%);
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+  min-height: 50px;
+  align-items: center;
+  // line-height: 60px;
+
+
+  // .main-nav {
+  //   grid-column: 2;
+  //   display: flex;
+  //   justify-content: center;
+
+
+  .logo {
+    padding: 5px;
+    font-size: 3.4em;
+    font-weight: 700;
+    background: #FFB077;
+    background: repeating-radial-gradient(ellipse farthest-side at top center, #FFB077 0%, #FF77A0 54%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 01s, background-color 1s;
+
+    &:hover {
+      transform: scale3d(1.1, 1.1, 1.2);
+      cursor: pointer;
+    }
+  }
+
+
+  .router-link-exact-active {
+    background-color: darken($mainBlue, 60);
+    border-radius: 10px;
+    color: lighten($mainBlue, 8);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    line-height: 1.2em;
+    max-width: 200px;
+    min-width: 180px;
+    justify-content: space-between;
+  }
+
+  .link {
+    color: $mainBlue;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover {
+      color: lighten($mainBlue, 8);
+    }
+
+  }
+
+  // }
+
+  .login-img {
+    height: 25px;
+    background-color: aliceblue;
+    border-radius: 3px;
+    position: relative;
+    transform: translate(0, 10%);
+    width: 25px;
+  }
+
+}

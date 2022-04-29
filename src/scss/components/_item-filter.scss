@@ -1,0 +1,21 @@
+.item-filter {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 5px;
+  text-align: center;
+  font-size: 0.8em;
+
+  .el-select {
+    widows: 10px;
+  }
+
+  label {
+    margin: 20px 20px;
+    font-weight: 400;
+  }
+
+  .el-input {
+    padding: 1px;
+  }
+}

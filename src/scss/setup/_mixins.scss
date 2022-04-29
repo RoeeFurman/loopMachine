@@ -1,0 +1,23 @@
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin button($size: 16px) {
+    border-radius: rem(3px);
+    background-color: darken($pink, 30%);
+    color: $white;
+    border: none;
+    padding: rem(5px) rem(20px);
+    font-family: inter-bold;
+    font-size: $size;
+    transition: all 400ms;
+
+    &:hover {
+        background-color: $pink;
+        color: black;
+        transform: translateY(-4px);
+    }
+}

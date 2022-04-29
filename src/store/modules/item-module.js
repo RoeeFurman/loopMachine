@@ -7,6 +7,9 @@ export default {
         isPlaying: false,
         isLooping: false,
         isStopped: false,
+        soundDuration: 17.487938,
+        cursorMovedTo: 0,
+        cursorProgress: 0
     },
     getters: {
         getItems(state) {
@@ -20,6 +23,15 @@ export default {
         },
         isStopped(state) {
             return state.isStopped
+        },
+        cursorMovedTo({ cursorMovedTo }) {
+            return cursorMovedTo
+        },
+        soundDuration({ soundDuration }) {
+            return soundDuration
+        },
+        cursorProgress({ cursorProgress }) {
+            return cursorProgress
         }
     },
     mutations: {
@@ -47,6 +59,13 @@ export default {
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
         },
+        onCursorMove(state, { currTime }) {
+            console.log(currTime)
+            state.cursorMovedTo = currTime
+        },
+        setProgress(state, { progress }) {
+            state.cursorProgress = progress
+        }
     },
     actions: {
         togglePlaying({ commit, state }) {

@@ -1,15 +1,51 @@
 <template>
-  <div class="cursor-container"></div>
+  {{ cursorProgress }}
+  <div class="cursor-container">
+    <input
+      class="timeline"
+      type="range"
+      @input="onChangeCursor"
+      v-model="currTime"
+      min="0"
+      :max="soundDuration"
+      step="any"
+    />
+  </div>
 </template>
-
 <script>
 import itemPreview from "./item-preview.vue";
 
 export default {
   props: {},
+  data() {
+    return {
+      currTime: 0,
+    };
+  },
+  computed: {
+    soundDuration() {
+      return this.$store.getters.soundDuration;
+    },
+    cursorProgress() {
+      return this.$store.getters.cursorProgress;
+    },
+  },
   components: {
     itemPreview,
   },
-  methods: {},
+  methods: {
+    onChangeCursor() {
+      console.log(this.currTime);
+      this.$store.commit({ type: "onCursorMove", currTime: this.currTime });
+    },
+  },
+  watch: {
+    cursorProgress: {
+      handler() {
+        this.currTime = this.cursorProgress;
+      },
+      immediate: true,
+    },
+  },
 };
 </script>

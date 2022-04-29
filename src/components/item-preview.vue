@@ -26,9 +26,14 @@ export default {
       sound: new Audio(`./sound/${this.item.fileURL}`),
     };
   },
-  mounted() {},
+  mounted() {
+    this.sound.addEventListener("timeupdate", this.updateProgress);
+  },
   components: {},
   computed: {
+    currentTimeTrack() {
+      return this.sound.currentTime;
+    },
     muteMode() {
       return this.item.isMuted;
     },
@@ -36,6 +41,9 @@ export default {
       return this.item.isMuted
         ? "fa-solid fa-volume-xmark"
         : "fa-solid fa-volume-high";
+    },
+    onCursorMovedTo() {
+      return this.$store.getters.cursorMovedTo;
     },
     isPlaying() {
       return this.$store.getters.isPlaying;
@@ -48,13 +56,20 @@ export default {
     },
   },
   methods: {
+    updateProgress(e) {
+      this.$store.commit({
+        type: "setProgress",
+        progress: e.srcElement.currentTime,
+      });
+    },
     stopSound() {
       this.sound.pause();
       this.sound.currentTime = 0;
     },
     toggleSound() {
-      if (this.isPlaying) this.sound.play();
-      else {
+      if (this.isPlaying) {
+        this.sound.play();
+      } else {
         this.sound.pause();
       }
     },
@@ -63,6 +78,13 @@ export default {
     },
   },
   watch: {
+    onCursorMovedTo: {
+      handler() {
+        this.sound.currentTime = this.onCursorMovedTo;
+        this.sound.play();
+      },
+      immediate: true,
+    },
     isPlaying: {
       handler() {
         this.toggleSound();
@@ -87,6 +109,9 @@ export default {
       },
       immediate: true,
     },
+  },
+  unmounted() {
+    this.sound.clearEventListener("timeupdate", this.updateProgress);
   },
 };
 </script>

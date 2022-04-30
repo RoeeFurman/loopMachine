@@ -21,10 +21,11 @@ export default {
     isLooping() {
       return this.$store.getters.isLooping;
     },
-
     displayPlayStop() {
       if (
-        this.$store.getters.cursorProgress === this.$store.getters.soundDuration
+        this.$store.getters.cursorProgress ===
+          this.$store.getters.soundDuration &&
+        !this.isLooping
       ) {
         this.stopAll();
         return "fa-solid fa-play";
@@ -35,27 +36,27 @@ export default {
   methods: {
     playAll() {
       if (this.isStopped) {
-        this.$store.dispatch({
-          type: "stopPlaying",
+        this.$store.commit({
+          type: "setStopPlaying",
         });
       }
-      this.$store.dispatch({
-        type: "togglePlaying",
+      this.$store.commit({
+        type: "setIsPlaying",
       });
     },
     stopAll() {
       if (this.isPlaying) {
-        this.$store.dispatch({
-          type: "togglePlaying",
+        this.$store.commit({
+          type: "setIsPlaying",
         });
       }
-      this.$store.dispatch({
-        type: "stopPlaying",
+      this.$store.commit({
+        type: "setStopPlaying",
       });
     },
     loopAll() {
-      this.$store.dispatch({
-        type: "toggleLoop",
+      this.$store.commit({
+        type: "setIsLooping",
       });
     },
   },

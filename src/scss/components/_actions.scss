@@ -9,7 +9,7 @@
 
     @media (max-width: 1000px) {
         grid-column: 1;
-        grid-row: 4;
+        grid-row: 3;
         width: 300px;
         padding: 0px 20px;
     }
@@ -19,11 +19,9 @@
         width: 80px;
         font-size: 30px;
         background-color: $mainBlack;
-        border: 1px solid $mainBlue;
+        border: 1px solid $mainOrange;
         border-radius: 10px;
         color: $main-white;
-
-        -webkit-box-shadow: 0px 0px 15px 5px #000000;
         box-shadow: 0px 0px 15px 5px #000000;
 
         @media (max-width: 1000px) {
@@ -33,6 +31,12 @@
 
         &.repeat {
             background-color: $mainGray;
+        }
+
+        transition: all .31s;
+
+        &:hover {
+            background-color: lighten($mainBlack, 5%);
         }
 
     }

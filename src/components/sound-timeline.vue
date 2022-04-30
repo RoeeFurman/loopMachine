@@ -8,7 +8,7 @@
 export default {
   name: "sound-timeline",
   props: {
-    item: Object,
+    layer: Object,
   },
   data() {
     return {};
@@ -17,7 +17,7 @@ export default {
   components: {},
   computed: {
     soundStyle() {
-      return { "background-color": this.item.color };
+      return { "background-color": this.layer.color };
     },
   },
   methods: {},

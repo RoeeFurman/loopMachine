@@ -2,7 +2,7 @@
   <section>
     <app-header />
     <router-view />
-    <!-- <app-footer /> -->
+    <app-footer />
   </section>
 </template>
 
@@ -12,7 +12,7 @@ import appFooter from "./components/app-footer.vue";
 export default {
   name: "app",
   created() {
-    this.$store.dispatch({ type: "loadItems" });
+    this.$store.dispatch({ type: "loadLayers" });
   },
 
   components: {

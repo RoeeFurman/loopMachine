@@ -1,12 +1,12 @@
-.item-app {
+.layer-app {
   background-color: $main-background;
   background-image: url('../assets/img/music-notes.svg');
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
   grid-template-columns: $gtc;
-  grid-template-rows: 60px 20px 1fr .5fr .3fr;
-  min-height: 88.8vh;
+  grid-template-rows: 60px 20px 1fr .5fr;
+  min-height: 82.3vh;
   gap: 15px;
   text-align: center;
   align-items: center;
@@ -17,6 +17,8 @@
     grid-template-rows: auto;
     background-size: cover;
     height: 100vw;
+    gap: 5px;
+
   }
 
   .sec-nav-container {
@@ -25,7 +27,7 @@
     height: 100px;
   }
 
-  .add-item {
+  .add-layer {
     width: 150px;
     margin: auto;
     font-size: 1em;

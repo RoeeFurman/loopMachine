@@ -1,4 +1,4 @@
-.item-preview {
+.layer-preview {
     height: 40px;
     align-items: center;
 
@@ -18,9 +18,17 @@
         border-radius: 6px;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid $mainGray;
+        border-bottom: 2px solid $mainGray;
         padding: 10px 20px;
         height: 40px;
         width: 260px;
+
+        transition: all .05s;
+
+        &:hover {
+            border-bottom: 4px solid $mainBlack;
+        }
+
+
     }
 }

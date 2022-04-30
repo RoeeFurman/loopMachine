@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import itemPreview from "./item-preview.vue";
+import layerPreview from "./layer-preview.vue";
 
 export default {
   props: {},
@@ -32,7 +32,7 @@ export default {
     },
   },
   components: {
-    itemPreview,
+    layerPreview,
   },
   methods: {
     onChangeCursor() {

@@ -2,19 +2,16 @@
 @import "setup/typography";
 @import "setup/variables";
 @import "setup/mixins";
-// @import "setup/functions";
 
 // BASICS
-// @import "basics/helpers";
 @import "basics/base";
-// @import "basics/layout";
 
 // COMPONENTS
 @import "components/main-header";
 @import "components/home-page";
-@import "components/item-app";
-@import "components/item-list";
-@import "components/item-preview";
+@import "components/layer-app";
+@import "components/layer-list";
+@import "components/layer-preview";
 @import "components/actions";
 @import "components/cursor-container";
 @import "components/sound-timeline";

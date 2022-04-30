@@ -1,9 +1,9 @@
 <template>
-  <section class="item-preview">
-    <li class="sound-layer" :style="{ 'background-color': item.color }">
-      <label @click="openPreviewLine"> {{ item.name }}</label>
+  <section class="layer-preview">
+    <li class="sound-layer" :style="{ 'background-color': layer.color }">
+      <label @click="openPreviewLine"> {{ layer.name }}</label>
       <div class="mute-btn">
-        <button @click="muteChannel(item._id)">
+        <button @click="muteChannel(layer._id)">
           <i :class="displayMuteBtn"></i>
         </button>
       </div>
@@ -13,15 +13,15 @@
 
 <script>
 export default {
-  name: "item-preview",
+  name: "layer-preview",
   props: {
-    item: Object,
+    layer: Object,
   },
   emits: ["muteChannel"],
   data() {
     return {
       openPreviewMode: false,
-      sound: new Audio(`./sound/${this.item.fileURL}`),
+      sound: new Audio(`./sound/${this.layer.fileURL}`),
     };
   },
   mounted() {
@@ -29,20 +29,6 @@ export default {
   },
   components: {},
   computed: {
-    cursorProgress() {
-      return this.$store.getters.cursorProgress;
-    },
-    muteMode() {
-      return this.item.isMuted;
-    },
-    displayMuteBtn() {
-      return this.item.isMuted
-        ? "fa-solid fa-volume-xmark"
-        : "fa-solid fa-volume-high";
-    },
-    onCursorMovedTo() {
-      return this.$store.getters.cursorMovedTo;
-    },
     isPlaying() {
       return this.$store.getters.isPlaying;
     },
@@ -51,6 +37,20 @@ export default {
     },
     isStopped() {
       return this.$store.getters.isStopped;
+    },
+    cursorProgress() {
+      return this.$store.getters.cursorProgress;
+    },
+    muteMode() {
+      return this.layer.isMuted;
+    },
+    displayMuteBtn() {
+      return this.layer.isMuted
+        ? "fa-solid fa-volume-xmark"
+        : "fa-solid fa-volume-high";
+    },
+    cursorPosition() {
+      return this.$store.getters.cursorMovedTo;
     },
   },
   methods: {
@@ -76,9 +76,9 @@ export default {
     },
   },
   watch: {
-    onCursorMovedTo: {
+    cursorPosition: {
       handler() {
-        this.sound.currentTime = this.onCursorMovedTo;
+        this.sound.currentTime = this.cursorPosition;
         if (this.isPlaying) this.sound.play();
       },
       immediate: true,
@@ -89,9 +89,16 @@ export default {
       },
       immediate: true,
     },
-    isLooping: {
+    cursorProgress: {
       handler() {
-        this.sound.loop = this.isLooping;
+        if (
+          this.isLooping &&
+          this.isPlaying &&
+          this.cursorProgress === this.sound.duration
+        ) {
+          this.sound.currentTime = 0;
+          this.sound.play();
+        }
       },
       immediate: true,
     },
@@ -103,7 +110,7 @@ export default {
     },
     muteMode: {
       handler() {
-        this.sound.muted = this.muteMode;
+        this.sound.muted = this.layer.isMuted;
       },
       immediate: true,
     },

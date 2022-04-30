@@ -1,6 +1,6 @@
 <template>
-  <section class="item-app">
-    <item-list v-if="items" :items="items" @muteChannel="muteChannel" />
+  <section class="layer-app">
+    <layer-list v-if="layers" :layers="layers" @muteChannel="muteChannel" />
     <actions />
     <cursorContainer />
     <show-time />
@@ -8,21 +8,21 @@
 </template>
 
 <script>
-import itemList from "../components/item-list.vue";
+import layerList from "../components/layer-list.vue";
 import actions from "../components/actions.vue";
 import showTime from "../components/show-time.vue";
 import cursorContainer from "../components/cursor-container.vue";
 export default {
   name: "home",
   components: {
-    itemList,
+    layerList,
     actions,
     cursorContainer,
     showTime,
   },
   computed: {
-    items() {
-      return this.$store.getters.getItems;
+    layers() {
+      return this.$store.getters.getlayers;
     },
   },
   methods: {

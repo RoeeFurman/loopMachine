@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: $gtc;
   grid-template-rows: 60px 20px 1fr .5fr;
-  min-height: 82.3vh;
+  min-height: calc(100vh - 144px);
   gap: 15px;
   text-align: center;
   align-items: center;
@@ -16,9 +16,8 @@
     grid-template-columns: 100vw;
     grid-template-rows: auto;
     background-size: cover;
-    // height: 100vw;
     gap: 5px;
-
+    min-height: calc(100vh - 120px);
   }
 
   >* {

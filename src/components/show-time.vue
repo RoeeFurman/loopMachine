@@ -5,10 +5,6 @@
 </template>
 <script>
 export default {
-  props: {},
-  data() {
-    return {};
-  },
   computed: {
     cursorProgress() {
       return (Math.floor(this.$store.getters.cursorProgress) + "").padStart(
@@ -17,8 +13,5 @@ export default {
       );
     },
   },
-  components: {},
-  methods: {},
-  watch: {},
 };
 </script>

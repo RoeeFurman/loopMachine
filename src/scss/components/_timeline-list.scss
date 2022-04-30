@@ -1,0 +1,23 @@
+.timeline-list {
+    grid-column: 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
+
+    .sound-timeline {
+        &.timeline-layer {
+            width: 100%;
+            height: 40px;
+            opacity: .2;
+            border: 1px solid $main-background;
+            border-radius: 8px;
+
+            transition: all .05s;
+        }
+
+    }
+}

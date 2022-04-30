@@ -1,6 +1,5 @@
 <template>
   <header class="main-header">
-    <!-- <header class="main-nav"> -->
     <h1 class="logo">LoopMachine</h1>
     <img
       class="icon"
@@ -12,6 +11,5 @@
 <script>
 export default {
   name: "app-header",
-  computed: {},
 };
 </script>

@@ -1,11 +1,13 @@
 <template>
   <section class="layer-preview">
-    <li class="sound-layer" :style="{ 'background-color': layer.color }">
+    <li
+      class="sound-layer"
+      :style="{ 'background-color': layer.color }"
+      @click="muteChannel(layer._id)"
+    >
       <label @click="openPreviewLine"> {{ layer.name }}</label>
       <div class="mute-btn">
-        <button @click="muteChannel(layer._id)">
-          <i :class="displayMuteBtn"></i>
-        </button>
+        <i :class="displayMuteBtn"></i>
       </div>
     </li>
   </section>
@@ -27,7 +29,6 @@ export default {
   mounted() {
     this.sound.addEventListener("timeupdate", this.updateProgress);
   },
-  components: {},
   computed: {
     isPlaying() {
       return this.$store.getters.isPlaying;

@@ -1,6 +1,6 @@
 <template>
   <footer class="main-header">
-    <div class="main-nav">&copy; Roee Furman</div>
+    <div class="copyrights">&copy; Roee Furman</div>
     <div class="contact">
       <a target="_blank" href="https://www.facebook.com/roee.furman/">
         <i class="fa fa-facebook"></i>
@@ -21,6 +21,5 @@
 <script>
 export default {
   name: "app-footer",
-  computed: {},
 };
 </script>

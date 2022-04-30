@@ -32,7 +32,7 @@ const layers = [
     {
         "_id": utilService.makeId(5),
         "name": "Tambourine shake",
-        "fileURL": "_tambourine_shake_higher.mp3",
+        "fileURL": "tambourine_shake_higher.mp3",
         "isMuted": false,
         "color": '#dd6f90',
     },

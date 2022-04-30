@@ -1,7 +1,5 @@
 <template>
-  <section class="sound-timeline">
-    <div class="layer" :style="soundStyle"></div>
-  </section>
+  <div class="timeline-layer" :style="soundStyle"></div>
 </template>
 
 <script>
@@ -10,18 +8,10 @@ export default {
   props: {
     layer: Object,
   },
-  data() {
-    return {};
-  },
-  mounted() {},
-  components: {},
   computed: {
     soundStyle() {
       return { "background-color": this.layer.color };
     },
   },
-  methods: {},
-  watch: {},
-  unmounted() {},
 };
 </script>

@@ -22,11 +22,12 @@
         padding: 10px 20px;
         height: 40px;
         width: 260px;
+        cursor: pointer;
 
         transition: all .05s;
 
         &:hover {
-            border-bottom: 4px solid $mainBlack;
+            border-bottom: 5px solid $mainBlack;
         }
 
 

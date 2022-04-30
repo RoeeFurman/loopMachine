@@ -16,32 +16,9 @@
     grid-template-columns: 100vw;
     grid-template-rows: auto;
     background-size: cover;
-    height: 100vw;
+    // height: 100vw;
     gap: 5px;
 
-  }
-
-  .sec-nav-container {
-    display: flex;
-    margin-top: 15px;
-    height: 100px;
-  }
-
-  .add-layer {
-    width: 150px;
-    margin: auto;
-    font-size: 1em;
-    font-weight: 900;
-    background-color: lighten($mainBlack, 80);
-    padding: 10px;
-    border-radius: 30px;
-    transition: transform 0.8s, background-color 0.7s;
-
-    &:hover {
-      background-color: lighten($mainBlack, 70);
-      //   transform: rotate(-0.01turn);
-      transform: scale(1.1);
-    }
   }
 
   >* {

@@ -14,7 +14,6 @@ export default {
   created() {
     this.$store.dispatch({ type: "loadLayers" });
   },
-
   components: {
     appHeader,
     appFooter,

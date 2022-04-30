@@ -44,6 +44,12 @@
     }
   }
 
+  .copyrights {
+    border-right: 1px solid $main-background;
+    width: 150px;
+    text-align: center;
+  }
+
   .contact>* {
     margin-left: 20px;
     text-align: center;
@@ -56,20 +62,26 @@
       line-height: 24px;
       font-size: 16px;
       border-radius: 50%;
+      color: $main-white;
+      transition: all .31s;
 
       &.fa-facebook {
-        color: #1b74e4;
+        &:hover {
+          color: #1b74e4;
+        }
       }
 
       &.fa-linkedin {
-        color: #0a66c2;
+        &:hover {
+          color: #0a66c2;
+        }
       }
-
-      transition: all .31s;
 
       &:hover {
-        background-color: $main-white;
+        color: $mainOrange;
       }
     }
+
+
   }
 }

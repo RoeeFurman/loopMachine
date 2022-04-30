@@ -10,7 +10,6 @@
 
 <script>
 export default {
-  components: {},
   computed: {
     isPlaying() {
       return this.$store.getters.isPlaying;

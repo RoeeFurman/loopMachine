@@ -1,21 +1,19 @@
 <template>
-  <ul class="layer-list">
-    <layer-preview
-      class="layer-preview"
-      v-for="layer in layers"
-      :layer="layer"
-      :key="layer._id"
-      @muteChannel="muteChannel"
-    />
-  </ul>
-  <ul class="sound-timeline">
-    <sound-timeline v-for="layer in layers" :layer="layer" :key="layer.name" />
-  </ul>
+  <section class="layers-list">
+    <ul>
+      <layer-preview
+        class="layer-preview"
+        v-for="layer in layers"
+        :layer="layer"
+        :key="layer._id"
+        @muteChannel="muteChannel"
+      />
+    </ul>
+  </section>
 </template>
 
 <script>
 import layerPreview from "./layer-preview.vue";
-import soundTimeline from "./sound-timeline.vue";
 
 export default {
   props: {
@@ -27,7 +25,6 @@ export default {
   },
   components: {
     layerPreview,
-    soundTimeline,
   },
   methods: {
     muteChannel(layerId) {

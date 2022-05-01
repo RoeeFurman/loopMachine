@@ -1,5 +1,5 @@
 <template>
-  <section class="layer-app">
+  <section class="main-app">
     <layer-list v-if="layers" :layers="layers" @muteChannel="muteChannel" />
     <timeline-list v-if="layers" :layers="layers" />
     <actions />

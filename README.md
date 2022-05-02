@@ -1,4 +1,5 @@
-# Flyo
+# Loop Machine
+https://roeefurman.github.io/loopMachine/
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -57,8 +58,6 @@ git subtree push --prefix dist origin gh-pages
 ​
 # Boom. If your folder isn’t called dist, then you’ll need to change that in each of the commands above.
 ```
-
-# source: https://gist.github.com/cobyism/4730490
 
 ```sh
 # Deploy to vercel
